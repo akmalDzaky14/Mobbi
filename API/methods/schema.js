@@ -40,7 +40,6 @@ const todoSchemaSingleDeleted = {
 };
 
 module.exports = {
-  todoItem,
   todoSchema,
   todoSchemaSingle,
   todoSchemaSingleDeleted,

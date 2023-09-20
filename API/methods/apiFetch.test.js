@@ -10,8 +10,13 @@ const { expect } = require("chai");
 
 describe("API Test", () => {
   describe("Get all todo", () => {
+    it("Status is 200", async () => {
+      const res = await apiFetch("/todos");
+      expect(res.status).is.equal(200);
+    });
     it("Schema is valid", async () => {
       const res = await apiFetch("/todos");
+      expect(res.status).is.equal(200);
       expect(res.body).have.jsonSchema(todoSchema);
     });
     it("Todos length is 30", async () => {
@@ -21,6 +26,10 @@ describe("API Test", () => {
   });
 
   describe("Get a single todo", (id = 5) => {
+    it("Status is 200", async () => {
+      const res = await apiFetch("/todos");
+      expect(res.status).is.equal(200);
+    });
     it("Schema is valid", async () => {
       const res = await apiFetch("/todos/" + id);
       expect(res.body).have.jsonSchema(todoSchemaSingle);
@@ -32,6 +41,10 @@ describe("API Test", () => {
   });
 
   describe("Get a random todo", (param = "random") => {
+    it("Status is 200", async () => {
+      const res = await apiFetch("/todos");
+      expect(res.status).is.equal(200);
+    });
     it("Schema is valid", async () => {
       const res = await apiFetch("/todos/" + param);
       expect(res.body).have.jsonSchema(todoSchemaSingle);
@@ -39,6 +52,10 @@ describe("API Test", () => {
   });
 
   describe("Limit and skip todos", (limit = 4, skip = 6) => {
+    it("Status is 200", async () => {
+      const res = await apiFetch("/todos");
+      expect(res.status).is.equal(200);
+    });
     it("Schema is valid", async () => {
       const res = await apiFetch("/todos?limit=" + limit + "&skip=" + skip);
       expect(res.body).have.jsonSchema(todoSchema);
@@ -58,6 +75,10 @@ describe("API Test", () => {
   });
 
   describe("Get all todos by user id", (userId = 1) => {
+    it("Status is 200", async () => {
+      const res = await apiFetch("/todos");
+      expect(res.status).is.equal(200);
+    });
     it("Schema is valid", async () => {
       const res = await apiFetch("/todos/user/" + userId);
       expect(res.body).have.jsonSchema(todoSchema);
@@ -77,6 +98,10 @@ describe("API Test", () => {
       userId: 14,
       completed: true,
     };
+    it("Status is 200", async () => {
+      const res = await apiFetch("/todos");
+      expect(res.status).is.equal(200);
+    });
     it("Schema is valid", async () => {
       const res = await apiFetch("/todos/add", "POST", newItem);
       expect(res.body).have.jsonSchema(todoSchemaSingle);
@@ -95,6 +120,10 @@ describe("API Test", () => {
       todo: "Change Todo",
       completed: false,
     };
+    it("Status is 200", async () => {
+      const res = await apiFetch("/todos");
+      expect(res.status).is.equal(200);
+    });
     it("Schema is valid with PUT", async () => {
       const res = await apiFetch("/todos/" + id, "PUT", updateItem);
       expect(res.body).have.jsonSchema(todoSchemaSingle);
@@ -113,6 +142,10 @@ describe("API Test", () => {
   describe("Delete a todo", () => {
     const id = 10;
     let originalData = { isDeleted: true };
+    it("Status is 200", async () => {
+      const res = await apiFetch("/todos");
+      expect(res.status).is.equal(200);
+    });
     it("Get original data for comparison", async () => {
       const res = await apiFetch("/todos/" + id);
       originalData = { ...res.body, ...originalData };
