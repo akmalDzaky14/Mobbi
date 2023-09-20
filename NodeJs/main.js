@@ -15,7 +15,5 @@ const convertNilai = require("./method/convertNilai");
 const prompt = require("prompt-sync")();
 
 const input = prompt("Nilai anda: ");
-
 const hasil = convertNilai(input);
-
 console.log(hasil);

@@ -6,7 +6,6 @@ describe("Test Konversi Nilai", () => {
     it("harus mengembalikan nilai A jika nilai 90 - 100", () => {
       expect(convertNilai(90)).to.equal("Nilai hasil konversi: A");
     });
-
     it("harus mengembalikan nilai B jika nilai 80 - 89", () => {
       expect(convertNilai(85)).to.equal("Nilai hasil konversi: B");
     });
