@@ -25,7 +25,8 @@ describe("API Test", () => {
     });
   });
 
-  describe("Get a single todo", (id = 5) => {
+  describe("Get a single todo", () => {
+    const id = 5;
     it("Status is 200", async () => {
       const res = await apiFetch("/todos");
       expect(res.status).is.equal(200);
@@ -40,7 +41,8 @@ describe("API Test", () => {
     });
   });
 
-  describe("Get a random todo", (param = "random") => {
+  describe("Get a random todo", () => {
+    const param = "random";
     it("Status is 200", async () => {
       const res = await apiFetch("/todos");
       expect(res.status).is.equal(200);
@@ -51,7 +53,9 @@ describe("API Test", () => {
     });
   });
 
-  describe("Limit and skip todos", (limit = 4, skip = 6) => {
+  describe("Limit and skip todos", () => {
+    const limit = 4;
+    const skip = 6;
     it("Status is 200", async () => {
       const res = await apiFetch("/todos");
       expect(res.status).is.equal(200);
@@ -74,7 +78,8 @@ describe("API Test", () => {
     });
   });
 
-  describe("Get all todos by user id", (userId = 1) => {
+  describe("Get all todos by user id", () => {
+    const userId = 1;
     it("Status is 200", async () => {
       const res = await apiFetch("/todos");
       expect(res.status).is.equal(200);
@@ -85,6 +90,7 @@ describe("API Test", () => {
     });
     it("Todos user ID is " + userId, async () => {
       const res = await apiFetch("/todos/user/" + userId);
+      // akan mempengaruhi performance jika ada banyak object member
       for (x in res.todos) {
         expect(res.body.todos[x].userId).is.equal(userId);
       }
@@ -108,6 +114,7 @@ describe("API Test", () => {
     });
     it("Data sent is correct", async () => {
       const res = await apiFetch("/todos/add", "POST", newItem);
+      // akan mempengaruhi performance jika ada banyak object member
       for (x in res.body) {
         expect(res.body[x]).is.equal(newItem[x]);
       }
