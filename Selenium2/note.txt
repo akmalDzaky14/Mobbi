@@ -1,0 +1,7 @@
+conf.json adalah konfigurasi untuk membuat dokumentasi jsdoc. Perintah untuk menjalankannya adalah:
+
+jsdoc -c conf.json
+
+nanti akan dibuat folder docs.
+
+Hasil dokumentsi bisa dilihat di ./docs/index.html

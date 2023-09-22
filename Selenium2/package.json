@@ -1,0 +1,20 @@
+{
+  "name": "selenium2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --no-timeouts **/*.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.8",
+    "mocha": "^10.2.0",
+    "selenium-webdriver": "^4.12.0"
+  },
+  "devDependencies": {
+    "@reportportal/agent-js-mocha": "^5.0.3"
+  }
+}
