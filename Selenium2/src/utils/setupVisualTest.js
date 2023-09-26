@@ -3,6 +3,16 @@ const { chaiImage } = require("chai-image");
 const { existsSync, writeFileSync, readFileSync } = require("fs");
 chai.use(chaiImage);
 
+/**
+ * Melakukan visual comparison test dengan membandingkan screenshot halaman saat ini
+ * dengan baseline screenshot yang sudah ada sebelumnya.
+ *
+ * @param {WebDriver} driver - Instance webdriver Selenium
+ * @param {string} PAGE_NAME - Nama halaman untuk penamaan file screenshot
+ * @param {string} PAGE_URL - URL halaman yang akan di-screenshot
+ *
+ * @returns {Promise<void>}
+ */
 async function VCT(driver, PAGE_NAME, PAGE_URL) {
   const baseScreenshotPath = `src/screenshots/base/${PAGE_NAME}.jpg`;
   const actualScreenshotPath = `src/screenshots/actual/${PAGE_NAME}.jpg`;
