@@ -4,7 +4,7 @@
  */
 
 const setupDriver = require("../src/utils/setupDriver");
-const VCT = require("../src/utils/setupVisualTest");
+const { VCT, setDriver } = require("../src/utils/setupVisualTest");
 const { WebDriver } = require("selenium-webdriver");
 
 describe("Visual Test Website", () => {
@@ -12,6 +12,7 @@ describe("Visual Test Website", () => {
 
   before(async function () {
     driver = await setupDriver();
+    setDriver(driver);
   });
 
   afterEach(async function () {
@@ -24,29 +25,27 @@ describe("Visual Test Website", () => {
 
   it("Halaman Tokopedia", async () => {
     await VCT(
-      driver,
       "Tokopedia",
       "https://www.tokopedia.com/help/article/syarat-dan-ketentuan-flash-sale-kejar-diskon-spesial-99"
     );
   });
 
   it("Halaman Sauce Demo", async () => {
-    await VCT(driver, "saucedemo", "https://www.saucedemo.com/v1/");
+    await VCT("saucedemo", "https://www.saucedemo.com/v1/");
   });
 
   it("Halaman onnoCenter", async () => {
     await VCT(
-      driver,
       "onnoCenter",
       "https://lms.onnocenter.or.id/wiki/index.php/Main_Page"
     );
   });
 
   it("Halaman npmjs", async () => {
-    await VCT(driver, "npmjs", "https://docs.npmjs.com/");
+    await VCT("npmjs", "https://docs.npmjs.com/");
   });
 
   it("Halaman knightlab", async () => {
-    await VCT(driver, "knightlab", "https://knightlab.northwestern.edu/posts/");
+    await VCT("knightlab", "https://knightlab.northwestern.edu/posts/");
   });
 });
