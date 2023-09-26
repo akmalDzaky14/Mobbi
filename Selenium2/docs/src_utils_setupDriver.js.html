@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: src/utils/setupDriver.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,31 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: src/utils/setupDriver.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const { Builder, Browser } = require("selenium-webdriver");
+/**
+ * Mengatur driver untuk browser Edge
+ *
+ * @return {Promise&lt;WebDriver>} - Promise yang mengembalikan driver
+ */
+async function setupDriver() {
+  const driver = await new Builder().forBrowser(Browser.EDGE).build();
+  await driver.manage().window().setRect({ width: 1920, height: 1080 });
+  return driver;
+}
 
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+module.exports = setupDriver;
+</code></pre>
+        </article>
+    </section>
 
 
 
