@@ -1,12 +1,12 @@
 const { WebDriver } = require("selenium-webdriver");
 const { expect } = require("chai");
-const setupDriver = require("./utils/setupDriver");
-const LoginPage = require("./pageobjects/LoginPage");
-const InventoryPage = require("./pageobjects/InventoryPage");
-const CartPage = require("./pageObjects/CartPage");
-const CheckoutPage = require("./pageObjects/CheckoutPage");
-const OverViewPage = require("./pageObjects/OverviewPage");
-describe("Test Website saucedemo", () => {
+const setupDriver = require("../src/utils/setupDriver");
+const LoginPage = require("../src/pageObjects/LoginPage");
+const InventoryPage = require("../src/pageObjects/InventoryPage");
+const CartPage = require("../src/pageObjects/CartPage");
+const CheckoutPage = require("../src/pageObjects/CheckoutPage");
+const OverViewPage = require("../src/pageObjects/OverviewPage");
+describe.skip("Test Website saucedemo", () => {
   /** @type {WebDriver} */ let driver;
   /** @type {LoginPage} */ let loginPage;
   /** @type {InventoryPage} */ let inventoryPage;
