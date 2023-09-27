@@ -1,0 +1,13 @@
+1. run appium with => appium --allow-cors
+2. run android emulator from terminal with => emulator.exe -avd 3a
+3. open https://inspector.appiumpro.com/ setup with => Remote Host: 127.0.0.1:4723 & input JSON Representation: capabilities 
+4. run test
+
+capabilities: {
+    "platformName": "Android",
+    "appium:automationName": "UIAutomator2",
+    # 3. get phone device name with => adb devices
+    "appium:deviceName": "emulator-5554",
+    "appium:app": "D:\Akmal\Job\PT. Pro Sigmaka Mandiri\Private\Mobbi\Tugas\Github\Android\apk\test.apk",
+    "appium:appActivity": ".MainActivity",
+  },
