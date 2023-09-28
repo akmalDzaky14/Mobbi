@@ -11,3 +11,15 @@ capabilities: {
     "appium:app": "D:\Akmal\Job\PT. Pro Sigmaka Mandiri\Private\Mobbi\Tugas\Github\Android\apk\test.apk",
     "appium:appActivity": ".MainActivity",
   },
+
+  # TUGAS
+- buat automation test menggunakan appium mocha dan chai pada aplikasi e-commerce mobile dari saucelabs
+- wajib pakai page object model
+- kerjakan pada project tugas sebelumnya dan upload ke github
+- max dikumpulin lusa sebelum pertemuan selanjutnya
+- fitur yg wajib ditest
+#//+ sort produk
+#//+ lihat detail produk dan semua fitur yang ada di detail produk
+#//+ tombol cart dan halaman cart
+++ buat e2e untuk proses pembelian produk
+
