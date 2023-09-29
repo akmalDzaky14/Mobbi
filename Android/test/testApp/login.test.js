@@ -6,7 +6,7 @@ const options = require("../../src/driverOptions/testApp");
 async function clickLoginBtn() {
   return await driver.$('//*[@content-desc="button-LOGIN"]').click();
 }
-describe.skip("Test aplikasi 1", () => {
+describe("Test aplikasi 1", () => {
   before(async () => {
     driver = await setDriver(options);
     await driver.$("~Login").click();
